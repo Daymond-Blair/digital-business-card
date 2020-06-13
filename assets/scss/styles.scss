@@ -2,86 +2,220 @@
 @import "reset";
 
 
-
-body {
-  line-height: 1;
-  background: white;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:after,
-blockquote:before,
-q:after,
-q:before {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+*,
+html,
 body {
   font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-  font-weight: 100;
-  font-size: 50px;
+body {
+  line-height: 1;
 }
 
-.home {
-  height: 100%;
+.container-background {
   width: 100%;
-  text-align: center;
-  .Aligner {
-    min-height: 100vh;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .page-background {
+    top: -10%;
+    width: 150%;
+    height: 150vh;
+    background: #2F4F4F;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    filter: blur(45px);
+    z-index: 1;
   }
-  img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  .Aligner-item {
-    max-width: 50%;
-  }
-  .menu ul li {
-    padding: 10px 15px;
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-  }
-  .version-num {
-    background: #E8E8E8;
-    border-radius: 4px;
-    padding: 7px 15px;
-    display: inline-block;
-    font-size: 12px;
-    margin: 10px 0 20px;
-  }
-  a {
-    text-decoration: none;
-    color: #30395C;
-    transition: all 0.3s ease-in-out;
-  }
-  a:hover {
-    color: #43D4D6;
+}
+
+.center-site {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .container-site {
+    display: grid;
+    height: 80vh;
+    width: 1200px;
+    background: white;
+    border-radius: 10px;
+    grid-template-columns: 80px 300px 1fr;
+    overflow: hidden;
+
+    .navigation {
+      background: #0e268e;
+      background: -moz-linear-gradient(top, #0e268e 1%, #9267d3 100%);
+      background: -webkit-linear-gradient(top, #0e268e 1%, #9267d3 100%);
+      background: linear-gradient(to bottom, #0e268e 1%, #9267d3 100%);
+
+      ul {
+        li {
+          display: block;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80px;
+
+          .fa {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+
+    .user-profile {
+      background: #002497;
+      background: -moz-linear-gradient(top, #002497 0%, #a176ec 100%);
+      background: -webkit-linear-gradient(top, #002497 0%, #a176ec 100%);
+      background: linear-gradient(to bottom, #002497 0%, #a176ec 100%);
+
+      .name {
+        padding: 20px 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: white;
+        text-align: center;
+      }
+
+      .border-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: dashed 1px #3847ae;
+        margin: 0 auto;
+        border-radius: 50%;
+        height: 154px;
+        width: 154px;
+
+        .user-image {
+          background: url(https://pbs.twimg.com/profile_images/1054434556156162054/1H_7AxP0.jpg) no-repeat center center;
+          background-size: cover;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+        }
+      }
+
+
+      .user-position {
+        color: white;
+        text-align: center;
+        margin: 20px 0 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .user-skills {
+        width: 100%;
+        padding: 20px 20px;
+        text-align: center;
+
+        .skill-title {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: white;
+          margin: 20px 0;
+        }
+
+        .skill {
+          background: #313cb2;
+          color: white;
+          font-weight: 300;
+          font-size: .8rem;
+          border-radius: 4px;
+          padding: 7px 15px;
+          display: inline-block;
+          margin-bottom: 10px;
+          transition: all .3s ease-in-out;
+          cursor: pointer;
+
+          &:hover {
+            color: #313cb2;
+            background: #fff;
+          }
+        }
+      }
+    }
+
+    .content-area {
+      background: #f8f7fc;
+      padding: 40px;
+
+      .hire-status {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 50px;
+
+        .primary-button {
+          color: white;
+          font-weight: 500;
+          font-size: .9rem;
+          text-transform: uppercase;
+          background: #57bcfe;
+          text-decoration: none;
+          padding: 10px 20px;
+          border-radius: 30px;
+          -webkit-box-shadow: 0 10px 44px 0px rgba(87, 187, 254, 0.50);
+          -moz-box-shadow: 0 10px 44px 0px rgba(87, 187, 254, 0.50);
+          box-shadow: 0 10px 44px 0px rgba(87, 187, 254, 0.50);
+        }
+      }
+
+      .container-about {
+        background: white;
+        border-radius: 4px;
+        padding: 40px;
+        margin-bottom: 40px;
+        -webkit-box-shadow: 0px 10px 126px 0px rgba(106, 110, 161, 0.63);
+        -moz-box-shadow: 0px 10px 126px 0px rgba(106, 110, 161, 0.63);
+        box-shadow: 0px 10px 126px 0px rgba(106, 110, 161, 0.63);
+
+        h2 {
+          color: #3f3f65;
+          font-size: 1.6rem;
+          text-transform: capitalize;
+          font-weight: 600;
+          margin-bottom: 40px;
+        }
+
+        p {
+          color: #6a6ea1;
+          font-size: 1rem;
+          text-transform: capitalize;
+          font-weight: 400;
+          line-height: 2;
+          margin-bottom: 20px;
+        }
+      }
+
+      .social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .social {
+          margin: 10px;
+
+          .logo {
+            .fa {
+              font-size: 1.3rem;
+            }
+          }
+
+          .stats {}
+        }
+      }
+    }
   }
 }
