@@ -68,6 +68,11 @@ body {
 
           .fa {
             font-size: 1.3rem;
+            cursor: pointer;
+
+            &:hover {
+              color: #57bcfe;
+            }
           }
         }
       }
@@ -162,13 +167,17 @@ body {
           font-weight: 500;
           font-size: .9rem;
           text-transform: uppercase;
-          background: #57bcfe;
+          background: #313cb2;
           text-decoration: none;
           padding: 10px 20px;
           border-radius: 30px;
           -webkit-box-shadow: 0 10px 44px 0px rgba(87, 187, 254, 0.50);
           -moz-box-shadow: 0 10px 44px 0px rgba(87, 187, 254, 0.50);
           box-shadow: 0 10px 44px 0px rgba(87, 187, 254, 0.50);
+
+          &:hover {
+            background: #57bcfe;
+          }
         }
       }
 
@@ -203,17 +212,34 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        text-align: center;
 
         .social {
           margin: 10px;
+          cursor: pointer;
+          display: block;
+          color: #313cb2;
+
+          &:hover {
+            color: #57bcfe
+          }
 
           .logo {
             .fa {
-              font-size: 1.3rem;
+              font-size: 2rem;
+              margin: 0 45px;
             }
           }
 
-          .stats {}
+          .stats {
+            display: block;
+            margin: 5px 0;
+
+            span {
+              display: block;
+              margin: 5px 0;
+            }
+          }
         }
       }
     }
